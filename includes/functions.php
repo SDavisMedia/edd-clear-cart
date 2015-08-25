@@ -48,7 +48,7 @@ function eddcc_process_clear_cart() {
 
 	// Redirect after a job well done
 	$cc_redirect_page = edd_get_option( 'edd_clear_cart_page' );
-	$cc_redirect = $cc_redirect_page ? get_permalink( $cc_redirect_page ) : home_url( '/' . lcfirst( edd_get_label_plural() ) ) ;
+	$cc_redirect = $cc_redirect_page ? get_permalink( $cc_redirect_page ) : home_url( '/' . strtolower( edd_get_label_plural() ) ) ;
 	wp_redirect( $cc_redirect ); exit;
 }
 add_action( 'edd_empty_cart', 'eddcc_process_clear_cart' );
