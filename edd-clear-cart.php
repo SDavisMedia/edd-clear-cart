@@ -43,7 +43,6 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
 				self::$instance = new EDD_Clear_Cart();
 				self::$instance->setup_constants();
 				self::$instance->includes();
-				self::$instance->hooks();
 				self::$instance->load_textdomain();
 			}
 			return self::$instance;
@@ -82,16 +81,6 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
 			if( is_admin() ) {
 				require_once EDD_CLEAR_CART_DIR . 'includes/settings.php';
 			}
-		}
-
-		/**
-		 * Run action and filter hooks
-		 *
-		 * @access      private
-		 * @since       1.0.0
-		 * @return      void
-		 */
-		private function hooks() {
 		}
 
 		/**
