@@ -14,9 +14,9 @@
 */
 
 // Exit if accessed directly
-if( !defined( 'ABSPATH' ) ) exit;
+if ( !defined( 'ABSPATH' ) ) exit;
 
-if( !class_exists( 'EDD_Clear_Cart' ) ) {
+if ( !class_exists( 'EDD_Clear_Cart' ) ) {
 
 	/**
 	 * Main plugin class
@@ -39,7 +39,7 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
 		 * @return      object self::$instance The one true EDD_Clear_Cart
 		 */
 		public static function instance() {
-			if( !self::$instance ) {
+			if ( !self::$instance ) {
 				self::$instance = new EDD_Clear_Cart();
 				self::$instance->setup_constants();
 				self::$instance->includes();
@@ -78,7 +78,7 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
 
 			// Include functions
 			require_once EDD_CLEAR_CART_DIR . 'includes/functions.php';
-			if( is_admin() ) {
+			if ( is_admin() ) {
 				require_once EDD_CLEAR_CART_DIR . 'includes/settings.php';
 			}
 		}
@@ -104,11 +104,11 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
 			$mofile_local   = $lang_dir . $mofile;
 			$mofile_global  = WP_LANG_DIR . '/edd-clear-cart/' . $mofile;
 
-			if( file_exists( $mofile_global ) ) {
+			if ( file_exists( $mofile_global ) ) {
 
 				// Look in global /wp-content/languages/edd-clear-cart/ folder
 				load_textdomain( 'edd-clear-cart', $mofile_global );
-			} elseif( file_exists( $mofile_local ) ) {
+			} elseif ( file_exists( $mofile_local ) ) {
 
 				// Look in local /wp-content/plugins/edd-clear-cart/languages/ folder
 				load_textdomain( 'edd-clear-cart', $mofile_local );
@@ -129,8 +129,8 @@ if( !class_exists( 'EDD_Clear_Cart' ) ) {
  * @return      \EDD_Clear_Cart The one true EDD_Clear_Cart
  */
 function EDD_Clear_Cart_load() {
-	if( !class_exists( 'Easy_Digital_Downloads' ) ) {
-		if( !class_exists( 'EDD_Clear_Cart_Activation' ) ) {
+	if ( !class_exists( 'Easy_Digital_Downloads' ) ) {
+		if ( !class_exists( 'EDD_Clear_Cart_Activation' ) ) {
 			require_once 'includes/class.edd-clear-cart-activation.php';
 		}
 		$activation = new EDD_Clear_Cart_Activation( plugin_dir_path( __FILE__ ), basename( __FILE__ ) );

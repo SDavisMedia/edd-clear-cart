@@ -7,7 +7,7 @@
  */
 
 // Exit if accessed directly
-if( !defined( 'ABSPATH' ) ) exit;
+if ( !defined( 'ABSPATH' ) ) exit;
 
 
 /**
@@ -17,7 +17,7 @@ if( !defined( 'ABSPATH' ) ) exit;
  */
 function eddcc_clear_cart_link() {
 	if ( class_exists( 'Easy_Digital_Downloads' ) && !edd_get_option( 'edd_clear_cart' ) ) {
-		$cc_link           = add_query_arg( 'edd_action', 'empty_cart' );
+		$cc_link           = add_query_arg( 'edd_action', 'cc_empty_cart' );
 		$cc_text           = edd_get_option( 'edd_clear_cart_text' );
 		$cc_link_type      = edd_get_option( 'edd_clear_cart_link_type' );
 		$color             = edd_get_option( 'checkout_color', 'blue' );
@@ -51,4 +51,4 @@ function eddcc_process_clear_cart() {
 	$cc_redirect = $cc_redirect_page ? get_permalink( $cc_redirect_page ) : home_url( '/' . strtolower( edd_get_label_plural() ) ) ;
 	wp_redirect( $cc_redirect ); exit;
 }
-add_action( 'edd_empty_cart', 'eddcc_process_clear_cart' );
+add_action( 'edd_cc_empty_cart', 'eddcc_process_clear_cart' );
