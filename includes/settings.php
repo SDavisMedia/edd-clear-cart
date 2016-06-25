@@ -3,6 +3,7 @@
 * Register Clear Cart settings section
 *
 * @return array
+ * @since       1.0.1
 */
 function eddcc_clear_cart_settings_section( $sections ) {
 	$sections['eddcc-settings'] = __( 'Clear Cart', 'edd-clear-cart' );

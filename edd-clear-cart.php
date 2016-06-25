@@ -3,7 +3,7 @@
  * Plugin Name: Easy Digital Downloads - Clear Cart
  * Plugin URI: https://wordpress.org/plugins/easy-digital-downloads-clear-cart/
  * Description: Adds a Clear Cart link to the Easy Digital Downloads checkout cart.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Sean Davis
  * Author URI: http://sdavismedia.com
  * Text Domain: edd-clear-cart
@@ -58,7 +58,7 @@ if ( !class_exists( 'EDD_Clear_Cart' ) ) {
 		private function setup_constants() {
 
 			// Plugin version
-			define( 'EDD_CLEAR_CART_VER', '1.0.0' );
+			define( 'EDD_CLEAR_CART_VER', '1.0.1' );
 
 			// Plugin path
 			define( 'EDD_CLEAR_CART_DIR', plugin_dir_path( __FILE__ ) );
@@ -73,7 +73,7 @@ if ( !class_exists( 'EDD_Clear_Cart' ) ) {
 		 * @access      private
 		 * @since       1.0.0
 		 * @return      void
-		 */ 
+		 */
 		private function includes() {
 
 			// Include functions
