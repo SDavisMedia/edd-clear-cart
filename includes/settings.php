@@ -1,6 +1,6 @@
 <?php
 /**
-* Register our settings section
+* Register Clear Cart settings section
 *
 * @return array
 */
