@@ -1,5 +1,17 @@
 <?php
 /**
+* Register our settings section
+*
+* @return array
+*/
+function eddcc_clear_cart_settings_section( $sections ) {
+	$sections['eddcc-settings'] = __( 'Clear Cart', 'edd-clear-cart' );
+	return $sections;
+}
+add_filter( 'edd_settings_sections_extensions', 'eddcc_clear_cart_settings_section' );
+
+
+/**
  * Settings
  *
  * @package     EDD\Clear Cart\Settings
@@ -47,6 +59,9 @@ function eddcc_clear_cart_settings( $settings ) {
 			),
 		),
 	);
+	if ( version_compare( EDD_VERSION, 2.5, '>=' ) ) {
+		$clear_cart_settings = array( 'eddcc-settings' => $clear_cart_settings );
+	}
 	return array_merge( $settings, $clear_cart_settings );
 }
 add_filter( 'edd_settings_extensions', 'eddcc_clear_cart_settings', 999, 1 );
